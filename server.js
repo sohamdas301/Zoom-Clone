@@ -3,6 +3,7 @@ const app = express();
 // const path = require('path');
 const cors = require("cors");
 const server = require('http').Server(app);
+const port = process.env.PORT || 8000;
 const io = require('socket.io')(server,{
     cors : {
         origin : '*',
@@ -41,8 +42,8 @@ io.on('connection', socket => {
     })
 })
 
-server.listen('8000');
-
+server.listen(port);
+// https://video00chat.herokuapp.com/ 
 //////////////////////////////////////////////////
 
 
